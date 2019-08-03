@@ -157,7 +157,7 @@ def single_source_shortest_paths(graph, s, d=None, annex=None, cost_func=None,
                 # not present in the ``costs`` list, its current cost
                 # is considered to be infinity.
                 costs[v] = cost_of_s_to_u_plus_cost_of_e
-                predecessors[v] = (u, e, cost_of_e)
+                predecessors[v] = (u, e, cost_of_s_to_u_plus_cost_of_e)
                 heappush(visit_queue, (cost_of_s_to_u_plus_cost_of_e, next(counter), v))
 
     if d is not None and d not in costs:
